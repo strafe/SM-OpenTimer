@@ -1,0 +1,6 @@
+# Auto detect text files and perform LF normalization.
+* text=auto
+
+*.sp linguist-language=SourcePawn
+*.inc linguist-language=SourcePawn
+*.smx binary
