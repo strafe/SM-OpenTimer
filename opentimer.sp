@@ -1675,10 +1675,11 @@ stock void TeleportPlayerToStart( int client )
 	}
 	else
 	{
+		int ent = -1;
 		float vecPos[3];
-		int ent = FindEntityByClassname( -1, ( g_iPreferredTeam == CS_TEAM_T ) ? "info_player_terrorist" : "info_player_counterterrorist" );
-		
-		if ( ent > 0 )
+		ent = FindEntityByClassname( -1, ( g_iPreferredTeam == CS_TEAM_T ) ? "info_player_terrorist" : "info_player_counterterrorist" );
+
+		if ( ent != -1 )
 		{
 			GetEntPropVector( ent, Prop_Data, "m_vecOrigin", vecPos );
 			TeleportEntity( client, vecPos, NULL_VECTOR, g_vecNull );
